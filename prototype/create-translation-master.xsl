@@ -26,9 +26,7 @@
     <xsl:otherwise>
       <xsl:value-of select="$path"/>
       <xsl:text>,</xsl:text>
-      <xsl:text>"</xsl:text>
-      <xsl:value-of select="."/>
-      <xsl:text>"</xsl:text>
+      <xsl:value-of select="local:csv-column(.)"/>
       <xsl:text>&#10;</xsl:text>
     </xsl:otherwise>
   </xsl:choose>
@@ -38,12 +36,16 @@
 	<xsl:param name="path" required="yes" />
   <xsl:value-of select="concat($path, '/@', local-name())"/>
   <xsl:text>,</xsl:text>
-  <xsl:text>"</xsl:text>
-  <xsl:value-of select="."/>
-  <xsl:text>"</xsl:text>
+  <xsl:value-of select="local:csv-column(.)"/>
   <xsl:text>&#10;</xsl:text>
 </xsl:template>
 
 <xsl:template match="@*|text()"/>
+
+<xsl:function name="local:csv-column">
+  <xsl:param name="data"/>
+  <!-- FIXME: let's hope we never get a " in the text -->
+  <xsl:value-of select="concat('&quot;', $data, '&quot;')"/>
+</xsl:function>
 
 </xsl:stylesheet>
