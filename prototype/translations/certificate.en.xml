@@ -4,7 +4,7 @@
 	http://creativecommons.org/licenses/by-sa/2.0/uk/deed.en_GB
   -->
 <?xml-stylesheet type="text/xsl" href="surveyor.xsl"?>
-<questionnaire version="0.7" xml:lang="en">
+<questionnaire version="0.7" xml:lang="en" yes="yes" no="no">
 	<levels>
 		<!-- not changing names of levels here as they are hard-coded throughout Ruby code base -->
 		<level id="basic">A fantastic start at the basics of publishing open data. It takes a lot to even get here.</level>
