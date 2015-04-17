@@ -48,5 +48,37 @@ class ResponseSetsControllerTest < ActionController::TestCase
 
   end
 
+  test "successful url resolves check" do
+    @user = FactoryGirl.create(:user)
+    @response_set = FactoryGirl.create(:response_set, :user => @user)
+
+    sign_in @user
+
+    url_check = mock('url')
+    url_check.stubs(:valid?).returns(true)
+    ODIBot.expects(:new).with('http://example.com/path').returns(url_check)
+
+    post :resolve, use_route: :surveyor, id: @response_set.id, :url => 'http://example.com/path'
+
+    assert_equal 'application/json', response.content_type
+    assert_equal({'valid' => true}, JSON.parse(response.body))
+
+  end
+
+  test "failed url resolves check" do
+    @user = FactoryGirl.create(:user)
+    @response_set = FactoryGirl.create(:response_set, :user => @user)
+
+    sign_in @user
+
+    url_check = mock('url')
+    url_check.stubs(:valid?).returns(false)
+    ODIBot.expects(:new).with('http://example.com/path').returns(url_check)
+
+    post :resolve, use_route: :surveyor, id: @response_set.id, :url => 'http://example.com/path'
+
+    assert_equal 'application/json', response.content_type
+    assert_equal({'valid' => false}, JSON.parse(response.body))
+  end
 
 end

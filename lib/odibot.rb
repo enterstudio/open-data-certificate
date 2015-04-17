@@ -36,7 +36,7 @@ class ODIBot
   end
 
   def linkedin?
-    uri.hostname =~ /linkedin\.com/
+    !!(uri.hostname =~ /linkedin\.com/)
   end
 
   def valid?

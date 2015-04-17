@@ -26,12 +26,8 @@ class ResponseSetsController < ApplicationController
   end
 
   def resolve
-    if code = resolve_url(params[:url])
-      Rails.cache.write(params[:url], code)
-      render json: {status: code}
-    else
-      render :nothing => true
-    end
+    check = ODIBot.new(params[:url])
+    render json: { valid: check.valid? }
   end
 
   def check_url(url, explanation)
