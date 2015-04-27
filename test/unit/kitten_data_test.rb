@@ -8,6 +8,10 @@ class KittenDataTest < ActiveSupport::TestCase
     def supported?
       true
     end
+
+    def detect_origin; end
+    def detect_host; end
+    def detect_publishing_format; end
   end
 
   def set_normal_data
