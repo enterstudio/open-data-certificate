@@ -19,9 +19,9 @@ class ResponseSetsController < ApplicationController
     end
   end
 
-  def resolve_url(url)
+  def resolve_url?(url)
     if url =~ /^#{URI::regexp}$/
-      ODIBot.new(url).response_code rescue nil
+      ODIBot.new(url).valid?
     end
   end
 
@@ -31,7 +31,7 @@ class ResponseSetsController < ApplicationController
   end
 
   def check_url(url, explanation)
-    if resolve_url(url) != 200
+    unless ODIBot.new(url).valid?
       if explanation.blank?
         respond_to do |format|
           format.json do
@@ -53,11 +53,11 @@ class ResponseSetsController < ApplicationController
 
   # Check the user's documentation url and populate answers from it
   def start
-    check_url(params[:response_set][:documentation_url], params[:response_set][:documentation_url_explanation])
-
-    render 'surveyor/start.html.haml' and return if @url_error
-
-    @response_set.autocomplete(params[:response_set][:documentation_url])
+    if documentation_url = params[:response_set][:documentation_url]
+      check_url(documentation_url, params[:response_set][:documentation_url_explanation])
+      render 'surveyor/start.html.haml' and return if @url_error
+      @response_set.autocomplete(documentation_url)
+    end
 
     respond_to do |format|
       format.html do
