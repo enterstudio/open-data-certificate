@@ -221,7 +221,7 @@ class KittenData < ActiveRecord::Base
   end
 
   def request_data
-    @dataset ||= DataKitten::Dataset.new(access_url: url) rescue nil
+    @dataset ||= DataKitten::Dataset.new(access_url: url)
 
     if @dataset && @dataset.supported? && dataset_field(:data_title)
       self.data = {
