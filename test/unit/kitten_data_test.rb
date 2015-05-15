@@ -149,7 +149,8 @@ class KittenDataTest < ActiveSupport::TestCase
   end
 
   test 'Fields are empty if data request failed' do
-    DataKitten::Dataset.expects(:new).raises
+    nil_dataset = mock('nil', supported?: false)
+    DataKitten::Dataset.expects(:new).returns(nil_dataset)
     assert_equal({}, kitten_data.fields)
   end
 
