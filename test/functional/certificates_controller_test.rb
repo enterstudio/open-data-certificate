@@ -10,8 +10,9 @@ class CertificatesControllerTest < ActionController::TestCase
   end
 
   test "published certificates with legacy empty kitten_data can be shown" do
+    stub_request(:get, "http://example.com/data").to_return(status:200, body: "")
     cert = FactoryGirl.create(:published_certificate_with_dataset)
-    cert.response_set.create_kitten_data
+    cert.response_set.create_kitten_data(url: "http://example.com/data")
     KittenData.any_instance.stubs(:data).returns(false)
     get :show, {dataset_id: cert.dataset.id, id: cert.id}
     assert_response :success
