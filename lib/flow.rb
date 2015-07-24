@@ -37,7 +37,7 @@ class Flow
     end
   end
 
-  def question(q, dependency = true)
+  def question(q, dependency = false)
     {
       id: q["id"],
       label: label(q),
