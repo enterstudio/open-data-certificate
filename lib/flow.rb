@@ -1,14 +1,19 @@
 class Flow
+  # will generate a flow chart based on the path that can be navigated through the
+  # entire scope of the certificates (legal and practical)
 
   def initialize(jurisdiction, type)
     path = get_path(jurisdiction, type)
+    # two Nokogiri parses are created because the operations & transformations exacted destructively modify data
     @xml = Nokogiri::XML(File.open(path))
     @xml_copy = Nokogiri::XML(File.open(path))
+    # marshals XML into two above hashes
   end
 
   def get_path(jurisdiction, type)
     jurisdiction = "en" if (jurisdiction == "gb" && type == "Practical")
-    jurisdiction.upcase! if type == "Legal"
+    # return two different paths based on whether legal or practical question flow selected
+    jurisdiction.upcase! if type == "Legal" # check what this bang! means
     folder = folder_name(type)
     path = File.join(Rails.root, 'prototype', folder, "certificate.#{jurisdiction}.xml")
     unless File.exist?(path)
@@ -28,16 +33,21 @@ class Flow
     @xml_copy.xpath("//if").remove # remove any dependencies
     @xml_copy.xpath("//question").map do |q|
       question(q)
+      # binding.pry
     end
+    # should return an array of hashes? TEST
   end
 
   def dependencies
     @xml.xpath("//if//question").map do |q|
       question(q, true)
     end
+    # should return an array of hashes? TEST
   end
 
   def question(q, dependency = true)
+    # q => Nokogiri::XML::Element
+    # returns a hash
     {
       id: q["id"],
       label: label(q),
@@ -46,9 +56,11 @@ class Flow
       answers: answers(q),
       prerequisites: dependency === true ? prerequisites(q) : nil
     }
+
   end
 
   def answers(question)
+    # suspect this returns different valiues
     if type(question) == "yesno"
       {
         "true" => {
@@ -83,6 +95,7 @@ class Flow
   end
 
   def type(question)
+    # determines and returns the type of input field is associated with XML
     if question.at_xpath("input")
       "input"
     elsif question.at_xpath("yesno")
@@ -99,13 +112,21 @@ class Flow
   end
 
   def dependency(question, answer)
+    # returns string
     dependency = @xml.xpath("//if[contains(@test, \"this.#{question["id"]}() === '#{answer}'\")]").at_css("question")
+    # if !dependency.nil?
+    #   binding.pry
+    # end
     dependency["id"] unless dependency.nil?
   end
 
   def prerequisites(question)
-    test = question.parent["test"] || question.parent.parent["test"]
+    # question => Nokogiri::XML::Element
+    # returns String or nil
+    test = question.parent["test"] || question.parent.parent["test"]  # returns a String
     test.scan(/this\.([a-z]+)\(\)/i).map { |s| s[0] } unless test.nil?
+    # this regex is scanning for `this.*xmlDependencyMethod*()`
+    # it returns an array of count 1 with a String of the *xmlDependencyMethod*() searched for
   end
 
 end
