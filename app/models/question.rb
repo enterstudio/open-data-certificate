@@ -99,12 +99,15 @@ class Question < ActiveRecord::Base
   end
 
   def translation(locale)
-    case(display_type)
+    default = {'text' => self.text, 'help_text' => self.help_text}
+    section = case(display_type)
     when 'label'
-      survey.translation(locale).fetch(:labels, {})[reference_identifier] || {}
+      :labels
     else
-      super(locale)
+      :questions
     end
+    translated = survey.translation(locale).fetch(section, {})[reference_identifier]
+    default.merge(translated || {}).with_indifferent_access
   end
 
   def heading(locale=I18n.locale)

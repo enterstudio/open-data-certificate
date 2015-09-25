@@ -97,11 +97,6 @@ module Surveyor
         r = [g ? g.renderer.to_s : nil, display_type].compact.join("_")
         r.blank? ? :default : r.to_sym
       end
-      def translation(locale)
-        {:text => self.text, :help_text => self.help_text}.with_indifferent_access.merge(
-          (self.survey_section.survey.translation(locale)[:questions] || {})[self.reference_identifier] || {}
-        )
-      end
 
       private
 
