@@ -5,7 +5,7 @@ module SurveyorHelper
   include ActionView::Helpers::OutputSafetyHelper
 
   def q_text(q, context=nil, locale=nil)
-    "#{q.text_for(nil, context, locale)}"
+    q.text_for(nil, context, locale).to_s
   end
 
   # Debug response_for method
