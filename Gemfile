@@ -1,30 +1,18 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.21'
+gem 'rails', '~> 4.0.13'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'sass'
+gem 'haml', '>= 3.1.3'
+gem 'protected_attributes'
 
-# gem "mongoid", "~> 3.0.0"
-# gem 'bson_ext'
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+gem 'therubyracer', :platforms => :ruby
+gem 'less-rails'
+gem 'less-rails-bootstrap', '~> 2.3.3'
+gem 'twitter-bootstrap-rails-confirm'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass'
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  gem 'haml', '>= 3.1.3'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
-  gem 'less-rails'
-  gem 'less-rails-bootstrap', '~> 2.3.3'
-  gem 'twitter-bootstrap-rails-confirm'
-
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'uglifier', '>= 1.0.3'
 
 group :test do
   gem "factory_girl_rails", "~> 4.0"
@@ -69,7 +57,7 @@ end
 
 group :surveyor do
   gem 'fastercsv', '~> 1.5.4'
-  gem 'formtastic', '~> 2.1.0'
+  gem 'formtastic', '~> 3.0'
   gem 'uuidtools', '~> 2.1'
   gem 'mustache', '0.99.4'
   gem 'rabl', '~>0.6.13'
@@ -119,7 +107,7 @@ gem 'jbuilder'
 gem 'rack-cors', require: 'rack/cors'
 gem 'alternate_rails', :github => 'theodi/alternate-rails'
 gem 'fog'
-gem 'juvia_rails', github: 'theodi/juvia_rails'
+# gem 'juvia_rails', github: 'theodi/juvia_rails'
 gem 'domainatrix'
 # newrelic appears to be adding significant performance problems
 #gem 'newrelic_rpm'
