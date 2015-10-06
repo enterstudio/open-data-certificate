@@ -29,14 +29,14 @@
                 = yield :nav_brand
               - else
                 = image_tag "logo.png"
-            %ul.nav.pull-right
+            %ul.nav.navbar-nav.pull-right
               =render 'shared/auth_bar'
             %span.label{:style => "margin-top: 10px;"}
               =link_to 'BETA', contact_page_url
       #mainnav.navbar.navbar-static-top
         .container
           .navbar-inner
-            %ul.nav.pull-right
+            %ul.nav.navbar-nav.pull-right
               = main_menu_navigation
     .whiteout
       - if content_for?(:header)
@@ -54,7 +54,7 @@
 
     %footer#footer
       .container
-        .span8.footer-content
+        .col-md-8.footer-content
           %h1
             %a{:href => "http://www.theodi.org"}= t('footmenu.odi_name')
           %p
@@ -73,7 +73,7 @@
             %a{:href => "http://creativecommons.org/licenses/by-sa/2.0/uk/deed.en_GB", :rel => "license"}
               = image_tag 'logo_cc_80x15.png', :size => '80x15', :alt => t('footmenu.cc_title')
 
-        .span4.footer-nav
+        .col-md-4.footer-nav
           %nav
             %ul.pull-right
               %li

@@ -31,7 +31,6 @@
 @gray: @odiGrey;
 @placeholderText: @odiGreyLight;
 @inputBorderRadius: 2px;
-
 // todo - use bigger size instead
 // @gridColumns:             12;
 // @gridColumnWidth:         70px;
@@ -140,12 +139,12 @@
         margin: 0 auto;
         }
 
-    .span6:first-child {
+    .col-md-6:first-child {
       border-right: thin white solid;
     }
 
 
-    .span6:last-child p:first-child {
+    .col-md-6:last-child p:first-child {
       text-align: center;
       min-height: 70px;
     }
@@ -332,16 +331,16 @@
 
 // override default label & badges colours
 .label, .badge {
-  color: @white;
+  color: #ffffff;
   background-color: @odiBlue;
 
   &-inverse{
     text-shadow:none;
     color: @odiBlue;
-    background-color: @white;
+    background-color: #ffffff;
   }
   &-inverse[href]{
-    background-color: darken(@white, 10%);
+    background-color: darken(#ffffff, 10%);
   }
 }
 
@@ -354,11 +353,11 @@
 #error_explanation {
   .alert();
   .alert-error();
-  .alert-block();
+  .alert-info();
 }
 
 .field_with_errors {
-  .control-group.error();
+  // .control-group.error();
 }
 
 /************************************************
@@ -373,9 +372,9 @@
   min-width: 160px;
   margin-top: 2px;
   padding: 5px 0;
-  background-color: @dropdownBackground;
+  background-color: #ffffff;
   border: 1px solid #ccc;
-  border: 1px solid @dropdownBorder;
+  border: 1px solid @dropdown-border;
   *border-right-width: 2px;
   *border-bottom-width: 2px;
   .border-radius(6px);
@@ -391,12 +390,12 @@
 }
 
 .tt-suggestion.tt-is-under-cursor {
-  color: @dropdownLinkColorHover;
-  #gradient > .vertical(@dropdownLinkBackgroundHover, darken(@dropdownLinkBackgroundHover, 5%));
+  color: @dropdown-link-hover-color;
+  #gradient > .vertical(@dropdown-link-hover-bg, darken(@dropdown-link-hover-bg, 5%));
 }
 
 .tt-suggestion.tt-is-under-cursor a {
-  color: @dropdownBackground;
+  color: #ffffff;
 }
 
 .tt-suggestion p {
@@ -637,7 +636,7 @@ header.affix {
     /* Background stripes (image has 30px of space on left to align) */
     background: url(/assets/background-home-header.gif) repeat-y center;
 
-    .span4 {
+    .col-md-4 {
 
       /* Make sure there's a gap between bottom of steps text and top of ODI logo/buttons */
       padding-bottom: 20px;
@@ -646,7 +645,7 @@ header.affix {
 
   }
 
-  .span4 {
+  .col-md-4 {
 
     // padd in the content
     h2, p{
@@ -690,7 +689,7 @@ header.affix {
 
   }
 
-  .span4 {
+  .col-md-4 {
     text-align: center;
 
     .logo {
@@ -1303,144 +1302,6 @@ table.cookies tr.cont td {
 
 
 
-/* My certificates view //
-
-.main-default .first-response-set i, .main-default  .previous-response-set i {
-display: inline-block;
-color: @odiRed;
-}
-
-.first-response-set {
-  background: @odiBlueTint;
-
-  td.level {
-    text-align: center;
-    padding: 13px 30px 5px 15px;
-    width: 48px;
-    border-right: 1px solid #fff;
-
-    p {
-    line-height: 15px;
-
-      small a {
-      font-size: 12px;
-      color: @odiBlue;
-      font-weight: normal;
-
-     }
-    }
-  }
-
-  td.last-updated {
-    time {
-      color: @odiGreyDarker;
-    }
-  }
-
-  button.copy-certificate {
-    padding: 8px 12px;
-  }
-}
-
-td.delete {
-    .btn-small {
-      padding: 2px 6px;
-      font-size: 12px;
-    }
-  }
-
-.previous-response-set {
-
-  border-top: 1px solid @odiGreyLighter;
-
-  td {
-    height: 30px;
-  }
-
-  button.copy-certificate {
-    text-align: left;
-    position: relative;
-    top: 7px;
-  }
-}
-
-button.copy-certificate {
-  font-size: 15px;
-  line-height: 15px;
-  font-weight: bold;
-
-  span {
-    display: block;
-    font-size: 12px;
-    font-weight: normal;
-  }
-}
-
-button.copy-certificate:hover {
-  font-size: 15px;
-}
-
-
-th.previous-title {
-  font-size: 16px;
-  text-align: left;
-  color: @odiGreyDark;
-  padding: 15px 0;
-}
-
-td.level {
-  .certificate-badge {
-    margin: 0 auto;
-    width: 100px;
-    height: 50px;
-  }
-
-  font-size: 12px;
-  font-weight: bold;
-  color: @odiGreyDark;
-}
-
-td.last-updated {
-  width: 110px;
-  font-size: 12px;
-  line-height: 17px;
-  color: @odiGreyDark;
-  padding-left: 20px;
-
-  time {
-    font-size: 15px;
-    display: block;
-  }
-}
-
-td.status {
-  width: 250px;
-  font-size: 15px;
-
-  &.published {
-    color: @odiCrimson;
-  }
-
-  &.archived {
-    color: @odiGreyDark;
-  }
-
-  &.editing {
-    color: @odiGreyDarker;
-    font-style: italic;
-  }
-}
-
-td.action {
-  width: 150px;
-
-  form {
-    margin: 0;
-  }
-}
-
-*/
-
 // UPDATED My Certificates (/Dashboard) view (remove above when ready)
 
 
@@ -1771,17 +1632,17 @@ header .jurisdiction{
   font-size: 14px;
   a {
     cursor: pointer;
-    color: @white;
+    color: #ffffff;
     white-space: nowrap;
     margin-left: 8px;
     margin-right: 30px;
 
   }
   .popover {
-    color: @black;
+    color: #000000;
   }
   .status {
-    color: @white;
+    color: #ffffff;
   }
 }
 
@@ -1897,7 +1758,7 @@ header .save-button {
       font-size: 27px;
     }
     h3, h4{
-      color:@white;
+      color:#ffffff;
       margin:0;
     }
 
@@ -2446,7 +2307,7 @@ header .save-button {
         }
       }
 
-      &.loading.question-row .span8 {
+      &.loading.question-row .col-md-8 {
         .status-icon {
           background: white;
 
@@ -2526,7 +2387,7 @@ header .save-button {
       }
     }
 
-    &.loading.question-row .span8 {
+    &.loading.question-row .col-md-8 {
       input.string {
         padding-right: 70px;
       }
@@ -2892,7 +2753,7 @@ strong.certificate-level {
 */
 .container.about {
 
-  .span8 {
+  .col-md-8 {
 
     margin-left: 0;
 
@@ -2957,7 +2818,7 @@ strong.certificate-level {
 */
 .container.terms, .container.contact {
 
-  .span8 {
+  .col-md-8 {
 
     margin-left: 0;
 
@@ -3402,10 +3263,10 @@ section.improvement {
 @media (min-width: 768px) and (max-width: 979px) {
 
   #padd .container {
-    .offset8 {
+    .col-md-offset-8 {
       margin-left: 416px;
     }
-    .span4 {
+    .col-md-4 {
       width: 328px;
     }
   }
@@ -3441,7 +3302,7 @@ section.improvement {
     }
   }
 
-  .span6.homepage-about-content {
+  .col-md-6.homepage-about-content {
     clear: both;
     margin-top: 30px;
     width: auto;
@@ -3562,7 +3423,7 @@ section.improvement {
 
     // No background-size in IE so fall back to re-exported resized images
     // Badges on About page
-    .container.about .span8 ul.kitemarks {
+    .container.about .col-md-8 ul.kitemarks {
 
         li.kitemark1 { background: url(/assets/ie/badges/raw_level_badge_65x58.png) no-repeat top left;}
         li.kitemark2 { background: url(/assets/ie/badges/pilot_level_badge_65x58.png) no-repeat top left;}
@@ -3702,7 +3563,7 @@ body{
   .juvia-container blockquote {
     font-size: 16px;
     line-height: 1.35em;
-    font-family: @sansFontFamily
+    font-family: @font-family-sans-serif;
   }
 }
 
@@ -3735,8 +3596,8 @@ body{
   font-size: 1em;
 
   &.admin-approved {
-    background-color: @successBackground;
-    border-color: @successBorder;
+    background-color: @state-success-bg;
+    border-color: @state-success-border;
   }
 }
 

@@ -49,7 +49,7 @@
     - else
       = a.text_for(nil, @render_context, I18n.locale)
 
-  %aside.span4.answer-meta{"data-meta-for"=> reference_identifier}
+  %aside.col-md-4.answer-meta{"data-meta-for"=> reference_identifier}
     - unless (g && g.display_type == "grid") || a.help_text.blank?
       %p
         != a.help_text_for(@render_context, I18n.locale)

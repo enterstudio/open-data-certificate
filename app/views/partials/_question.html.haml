@@ -86,12 +86,12 @@
       -# for multiple answers, we want to give the question once
       -# at the start of the questions
       - if q.choice_type?
-        %label.span8.question_label
+        %label.col-md-8.question_label
           != question_text
           - if q.minimum_level
             = question_requirement_with_badge(q.minimum_level)
 
-      .span8
+      .col-md-8
         - i = response_idx
 
         - case renderer
@@ -120,7 +120,7 @@
               %div.status-icon
                 %i.icon-loading.icon-spin.icon-refresh.icon-large
                 %i.icon.icon-variable
-              %div.span8.status-message
+              %div.col-md-8.status-message
                 %span= status_message
                 %i.arrow-border
                 %i.arrow
@@ -135,7 +135,7 @@
           = f.semantic_fields_for i, r do |ff|
             = ff.input :explanation, as: :additional_text, label: t('surveyor.override_explanation_title'), subtitle: url_field && url_error ? t('surveyor.url_explanation') : t('surveyor.autocomplete_explanation')
 
-      %aside.span4.question-meta{"data-meta-for"=> rg ? "#{q.reference_identifier}_#{rg}" : q.reference_identifier}
+      %aside.col-md-4.question-meta{"data-meta-for"=> rg ? "#{q.reference_identifier}_#{rg}" : q.reference_identifier}
         - unless (q.help_text.blank?)
           %p
             != q.help_text_for(@render_context, I18n.locale)

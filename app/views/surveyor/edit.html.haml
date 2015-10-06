@@ -18,7 +18,7 @@
       %header
         .container
           .row
-            .span9
+            .col-md-9
               .jurisdiction
                 = t('surveys.jurisdiction')
                 .badge.badge-inverse=  @response_set.survey.complete_title
@@ -32,7 +32,7 @@
                     %i.icon.icon-pencil
 
               %h1{'data-bind-to-input' => @survey.meta_map[:dataset_title]}= @response_set.title
-            .span3.save-button
+            .col-md-3.save-button
               - if user_signed_in?
                 %button.btn.btn-primary.btn-large.pull-right{type: :submit, name: :finish}
                   %i.icon-loading.icon-spin.icon-refresh.icon-large
@@ -66,7 +66,7 @@
       .container.survey-intro
         .well
           .row-fluid
-            .span8.lead
+            .col-md-8.lead
               != @survey.intro
               %p
                 %a{href: about_page_url}
@@ -77,7 +77,7 @@
             %label
               = question.heading
             .row-fluid
-              .span8
+              .col-md-8
                 - if @response_set.documentation_url.blank?
                   %p.url.placeholder= question.placeholder
                   .alert.alert-error
@@ -91,7 +91,7 @@
                     .alert.alert-info
                       = t('surveyor.documentation_url.not_autocompleted')
 
-              .span4
+              .col-md-4
                 %a.btn.btn-large.btn-primary{href: 'start'} Edit
 
 

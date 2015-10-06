@@ -6,10 +6,10 @@
 
   .form-field
     = f.label :password, t("authentication.new_password")
-    = f.password_field :password, :autofocus => true, :class => 'span8'
+    = f.password_field :password, :autofocus => true, :class => 'col-md-8'
   .form-field
     = f.label :password_confirmation, t("authentication.confirm_new_password")
-    = f.password_field :password_confirmation, :class => 'span8'
+    = f.password_field :password_confirmation, :class => 'col-md-8'
 
   = f.submit t('authentication.change_my_password'), :class => 'btn btn-primary'
 

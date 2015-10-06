@@ -1,9 +1,9 @@
 = modal_popup('start-cert-modal', '', t('homepage.start_new_certificate')) do
   .row-fluid
-    .span6.log-in
+    .col-md-6.log-in
       %h1= t('homepage.log_in')
       = render 'devise/sessions/form', resource: User.new, resource_name: 'user', remote: true, form_id: 'start_cert_modal_form'
-    .span6
+    .col-md-6
       %h1= t('homepage.dont_have_an_account')
       %p= t('homepage.register_later_message')
       = form_tag non_authenticated_start_questionnaire_path, class: 'start-survey' do

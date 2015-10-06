@@ -7,7 +7,7 @@
   #padd{style: 'height:500px;'}
     .container
       .row
-        .span4.offset8
+        .col-md-4.col-md-offset-8
           %h1= t('homepage.title')
           %h2= t('homepage.tagline').html_safe
           = new_certificate_link({role: 'button', class: ['btn', 'btn-large', 'btn-primary'], link_text: t('homepage.start_new_certificate')})
@@ -19,23 +19,23 @@
   %header.home
     .container
       .row
-        .span12
+        .col-md-12
           %h1= t('homepage.how_it_works')
       .row.steps
-        .span4
+        .col-md-4
           %h2
             1
             %small= t('homepage.fill_out_questionnaire.title')
 
           %p= t('homepage.fill_out_questionnaire.description')
 
-        .span4
+        .col-md-4
           %h2
             2
             %small= t('homepage.generate_certificate.title')
           %p= t('homepage.generate_certificate.description')
 
-        .span4.last
+        .col-md-4.last
           %h2
             3
             %small= t('homepage.share_open_data.title')
@@ -43,19 +43,19 @@
 
 .home-header-buttons
   .row
-    .span4
+    .col-md-4
       %p.logo ODI
-    .span4
+    .col-md-4
       = new_certificate_link({role: 'button', class: ['btn', 'btn-large', 'btn-primary'], link_text: t('homepage.start_new_certificate')})
-    .span4
+    .col-md-4
       = link_to t('homepage.browse_certificates'), datasets_path, class: ['btn', 'btn-large', 'btn-primary']
 
 .main
   .row
-    .span6
+    .col-md-6
       .video-container
         %iframe{width: 560, height: 315, src: 'https://www.youtube.com/embed/_k5pQxeQq9w', frameborder: 0, allowfullscreen: 'allowfullscreen'}
-    .span6.homepage-about-content
+    .col-md-6.homepage-about-content
       %h2.about-certificate
         = link_to t('homepage.about_certificate.title'), about_page_path
       %p.about-certificate= t('homepage.about_certificate.description')
@@ -68,9 +68,9 @@
 
 #international-reach{style: 'visibility:hidden;height:500px;'}
   .row
-    .span6
+    .col-md-6
       .map
-    .span6.controls
+    .col-md-6.controls
       %h2= t('homepage.international_reach.title')
       %p= t('homepage.international_reach.description')
       .form-inline

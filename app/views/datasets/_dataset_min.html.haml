@@ -4,13 +4,13 @@
 - if dataset.certificate
   .dataset{class: defined?(expanded) ? 'expanded': ''}
     .row
-      .span4
+      .col-md-4
         %a.level-badge{class: "level-badge-#{dataset.certificate.attained_level}", href: url_for(dataset)}
         %h3.badge-align
           = link_to_unless_current dataset.title, dataset
-      .span3
+      .col-md-3
         =link_to 'View certificate', dataset_latest_certificate_path(dataset), class: 'btn btn-info'
-      .span3
+      .col-md-3
         .details
           %p
             %span Published By
@@ -18,7 +18,7 @@
           %p
             %span Issued
             %strong= "#{time_ago_in_words(dataset.certificate.published_at)} ago"
-      .span2
+      .col-md-2
         .expand
           %i.show-more.icon-chevron-down
           %i.hide-more.icon-chevron-up
@@ -31,15 +31,15 @@
     .more
       %hr
       .row
-        .span4
+        .col-md-4
           =render 'shared/response_set_summary_short', response_set: dataset.response_set
 
-        .span8
+        .col-md-8
           =render 'shared/response_set_description', response_set: dataset.response_set
 
 - else
   .dataset
     .row
-      .span12 No published certificate
+      .col-md-12 No published certificate
 
 %hr.heavy

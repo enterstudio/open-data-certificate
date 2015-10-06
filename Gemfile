@@ -4,12 +4,13 @@ gem 'rails', '~> 4.0.13'
 
 gem 'sass'
 gem 'haml', '>= 3.1.3'
+gem 'coffee-script'
 gem 'protected_attributes'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', :platforms => :ruby
-gem 'less-rails'
-gem 'less-rails-bootstrap', '~> 2.3.3'
+gem 'less-rails', '~> 2.7.0'
+gem 'less-rails-bootstrap'
 gem 'twitter-bootstrap-rails-confirm'
 
 gem 'uglifier', '>= 1.0.3'

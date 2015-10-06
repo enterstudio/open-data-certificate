@@ -24,7 +24,7 @@ class SelectInput < Formtastic::Inputs::SelectInput
           "<div class='clear-margin'></div>",
         "</div>",
         "<div class='status-below status-below-compact'>",
-          "<div class='span8 status-message'>",
+          "<div class='col-md-8 status-message'>",
             "<span>#{status[:message]}</span><i class='arrow-border'></i><i class='arrow'></i>",
           "</div>",
         "</div>"

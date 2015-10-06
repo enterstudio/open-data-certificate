@@ -6,13 +6,13 @@
 
   .form-field
     = f.label :email
-    = f.email_field :email, :autofocus => true, :class => 'span8'
+    = f.email_field :email, :autofocus => true, :class => 'col-md-8'
   .form-field
     = f.label :password
-    = f.password_field :password, :autocomplete => "off", :class => 'span8'
+    = f.password_field :password, :autocomplete => "off", :class => 'col-md-8'
   .form-field
     = f.label :password_confirmation
-    = f.password_field :password_confirmation, :class => 'span8'
+    = f.password_field :password_confirmation, :class => 'col-md-8'
   .form-field
     = f.label :agreed_to_terms do
       = f.check_box :agreed_to_terms

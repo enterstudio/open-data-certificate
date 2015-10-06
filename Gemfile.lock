@@ -89,6 +89,10 @@ GEM
     celluloid (0.16.0)
       timers (~> 4.0.0)
     coderay (1.1.0)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.7.0)
     colorize (0.7.7)
     commonjs (0.2.7)
     connection_pool (2.2.0)
@@ -220,13 +224,15 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.4.3)
       addressable (~> 2.3)
-    less (2.3.3)
-      commonjs (~> 0.2.6)
-    less-rails (2.3.3)
-      actionpack (>= 3.1)
-      less (~> 2.3.1)
-    less-rails-bootstrap (2.3.3)
-      less-rails (~> 2.3.1)
+    less (2.6.0)
+      commonjs (~> 0.2.7)
+    less-rails (2.7.0)
+      actionpack (>= 4.0)
+      less (~> 2.6.0)
+      sprockets (> 2, < 4)
+      tilt
+    less-rails-bootstrap (3.3.5.0)
+      less-rails (>= 2.6, <= 2.8)
     libv8 (3.16.14.7)
     link_header (0.0.8)
     linkeddata (1.1.11)
@@ -503,6 +509,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   cancan
+  coffee-script
   coveralls
   csvlint!
   cucumber-rails
@@ -528,8 +535,8 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
-  less-rails
-  less-rails-bootstrap (~> 2.3.3)
+  less-rails (~> 2.7.0)
+  less-rails-bootstrap
   linkeddata
   lograge
   logstash-event
