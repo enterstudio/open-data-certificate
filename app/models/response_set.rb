@@ -39,8 +39,6 @@ class ResponseSet < ActiveRecord::Base
   has_one :kitten_data, dependent: :destroy, order: "created_at DESC", inverse_of: :response_set
   has_one :certificate_generator, inverse_of: :response_set
 
-  scope :published, where(:aasm_state => 'published')
-
   # Checks if a value is blank by Surveyor's standards
   def self.is_blank_value?(value)
     value.is_a?(Array) ? value.all?{|values| values.blank? } : value.to_s.blank?
