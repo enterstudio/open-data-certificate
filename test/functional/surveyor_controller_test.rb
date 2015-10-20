@@ -32,7 +32,29 @@ class SurveyorControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to "/en/surveys/#{@response_set.survey.access_code}/#{@response_set.access_code}/take?update=true"
+  end
 
+  test "continue with published expired survey" do
+    @response_set = FactoryGirl.create(:published_response_set)
+    @response_set.certificate.update_attribute :expires_at, DateTime.now - 1.day
+    sign_in @response_set.user
+    # a new version of the survey is added
+    FactoryGirl.create(:survey,
+      access_code: @response_set.survey.access_code,
+      survey_version: @response_set.survey.survey_version + 1
+    )
+
+    assert_difference('ResponseSet.count', 1) do
+      post :continue, use_route: :surveyor,
+              locale: :en,
+              survey_code: @response_set.survey.access_code,
+              response_set_code: @response_set.access_code,
+              update: true
+    end
+
+    new_response_set = ResponseSet.last
+    refute @response_set.reload.superseded?
+    assert_redirected_to "/en/surveys/#{new_response_set.survey.access_code}/#{new_response_set.access_code}/take?update=true"
   end
 
   test "continue with superceeded survey" do

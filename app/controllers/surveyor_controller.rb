@@ -203,7 +203,7 @@ class SurveyorController < ApplicationController
     attrs['survey_id'] = survey.id
     response_set = @response_set
     create_new_response_set(attrs)
-    response_set.supersede!
+    response_set.supersede! if response_set.draft?
   end
 
 end
