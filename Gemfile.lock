@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: git://github.com/theodi/data_kitten.git
-  revision: 1f8ff3598291642b7f832d0875fe33e486829bb2
+  revision: e71ac10b5fe0c74b8677bf373f310f115a8fee3f
   specs:
     data_kitten (1.3.1)
       datapackage
@@ -235,8 +235,8 @@ GEM
     json (1.8.3)
     json-ld (1.1.9)
       rdf (~> 1.1, >= 1.1.7)
-    json-schema (2.5.1)
-      addressable (~> 2.3.7)
+    json-schema (2.5.2)
+      addressable (~> 2.3.8)
     json_spec (1.0.3)
       multi_json (~> 1.0)
       rspec (~> 2.0)
@@ -559,6 +559,7 @@ PLATFORMS
 
 DEPENDENCIES
   aasm
+  addressable
   airbrake
   alternate_rails!
   better_errors

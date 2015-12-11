@@ -132,6 +132,7 @@ gem 'domainatrix'
 gem 'google_drive'
 gem 'memoist'
 gem 'validate_url'
+gem 'addressable'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'sidekiq-failures'
