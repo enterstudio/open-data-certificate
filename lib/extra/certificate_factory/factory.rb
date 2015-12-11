@@ -99,8 +99,7 @@ module CertificateFactory
     end
 
     def get_dataset_url(item)
-      api_url = item["link"].find { |l| l["rel"] == "enclosure" }["href"]
-      CertificateFactory::API.new(api_url).ckan_url
+      item["link"].find { |l| l["rel"] == "enclosure" }["href"]
     end
 
   end
@@ -150,7 +149,7 @@ module CertificateFactory
     end
 
     def get_dataset_url(resource)
-      build_url("dataset/#{resource['name']}")
+      build_url("api/3/action/package_show", 'id' => resource['name'])
     end
   end
 end

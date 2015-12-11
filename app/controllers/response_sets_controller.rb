@@ -30,7 +30,7 @@ class ResponseSetsController < ApplicationController
     if request.put?
       valid = false
       if ODIBot.valid?(@documentation_url)
-        @response_set.autocomplete(@documentation_url)
+        @response_set.prefill(@documentation_url)
         valid = true
       elsif url_explanation.present?
         @response_set.documentation_url = @documentation_url

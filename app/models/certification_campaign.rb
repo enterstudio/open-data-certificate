@@ -11,7 +11,14 @@ class CertificationCampaign < ActiveRecord::Base
   has_many :certificate_generators
   belongs_to :user
 
-  attr_accessible :name, :limit, :url, :jurisdiction, :version
+  attr_accessible :name, :limit, :url, :jurisdiction, :dataset_url_template, :version
+
+  def dataset_url_for(name)
+    base = URI(url)
+    template = (dataset_url_template || "dataset/#{name}")
+    path = URI(template.gsub(/{name}/, name))
+    base.merge(path).to_s
+  end
 
   def total_count
     generated_count

@@ -32,10 +32,13 @@
   </div>
 
   <div class="control-group">
-    <%= f.label(:limit, "Dataset limit (optional)", class: "control-label") %>
+    <%= f.label(:dataset_url_template, "Dataset URL template (optional)", class: "control-label") %>
     <div class="controls">
-      <%= f.number_field :limit, min: 0 %>
-      <%= error_message_for(@campaign, :limit) %>
+      <%= f.text_field :dataset_url_template, class: "span6", placeholder: "dataset/{name}" %>
+      <span class="help-inline">
+        If the CKAN installation has customised dataset urls then you can change this template
+      </span>
+      <%= error_message_for(@campaign, :dataset_url_template) %>
     </div>
   </div>
 

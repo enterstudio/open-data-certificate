@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151105172643) do
+ActiveRecord::Schema.define(:version => 20151120104819) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -81,12 +81,13 @@ ActiveRecord::Schema.define(:version => 20151105172643) do
 
   create_table "certification_campaigns", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
-    t.integer  "duplicate_count", :default => 0
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.integer  "duplicate_count",      :default => 0
     t.integer  "user_id"
-    t.string   "jurisdiction",    :default => "gb"
+    t.string   "jurisdiction",         :default => "gb"
     t.string   "url"
+    t.string   "dataset_url_template"
   end
 
   create_table "claims", :force => true do |t|
