@@ -80,7 +80,7 @@ group :surveyor do
   gem 'rabl', '~>0.6.13'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 3.1.3'
 
 #To serve static content / styleguide
 gem 'high_voltage'
