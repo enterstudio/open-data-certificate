@@ -36,7 +36,7 @@ group :test do
   gem 'webmock'
   gem 'shoulda-context'
   gem 'timecop'
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', '>= 2.1.0', require: false
   gem 'database_cleaner'
   gem 'launchy'
 
