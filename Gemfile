@@ -112,7 +112,7 @@ gem 'thin'
 
 gem "ransack"
 gem 'surveyor', path: 'vendor/gems/surveyor-1.4.0'
-gem 'redcarpet'
+gem 'redcarpet', '>= 3.5.1'
 gem "devise", "3.0.3"
 gem 'dotenv-rails'
 gem 'httparty'
