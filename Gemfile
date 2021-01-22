@@ -128,7 +128,7 @@ gem 'juvia_rails', github: 'theodi/juvia_rails'
 gem 'domainatrix'
 # newrelic appears to be adding significant performance problems
 #gem 'newrelic_rpm'
-gem 'google_drive'
+gem 'google_drive', '>= 0.3.9'
 gem 'memoist'
 gem 'validate_url'
 gem 'sidekiq'
