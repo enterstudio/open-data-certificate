@@ -1,4 +1,4 @@
-gem 'rails', '~> 3.2.21'
+gem 'rails', '~> 6.0.3', '>= 6.0.3.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,14 +10,14 @@ gem 'rails', '~> 3.2.21'
 # in production environments by default.
 group :assets do
   gem 'sass'
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 5.0.8'
+  gem 'coffee-rails', '~> 4.2.2'
 
   gem 'haml', '>= 3.1.3'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
-  gem 'less-rails'
+  gem 'less-rails', '>= 2.3.3'
   gem 'less-rails-bootstrap', '~> 2.3.3'
   gem 'twitter-bootstrap-rails-confirm'
 
@@ -25,7 +25,7 @@ group :assets do
 end
 
 group :test do
-  gem "factory_girl_rails", "~> 4.0"
+  gem "factory_girl_rails", "~> 4.4", ">= 4.4.1"
   gem 'sqlite3'
   gem 'coveralls'
   gem 'shoulda'
@@ -36,7 +36,7 @@ group :test do
   gem 'webmock'
   gem 'shoulda-context'
   gem 'timecop'
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', '>= 1.4.3', require: false
   gem 'database_cleaner'
   gem 'launchy'
 
@@ -69,18 +69,18 @@ group :production do
   gem 'airbrake'
   gem 'delayed-plugins-airbrake'
   gem 'logstash-event'
-  gem 'lograge'
+  gem 'lograge', '>= 0.2.2'
 end
 
 group :surveyor do
   gem 'fastercsv', '~> 1.5.4'
-  gem 'formtastic', '~> 2.1.0'
+  gem 'formtastic', '~> 2.2.0'
   gem 'uuidtools', '~> 2.1'
   gem 'mustache', '0.99.4'
   gem 'rabl', '~>0.6.13'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 4.0.1'
 
 #To serve static content / styleguide
 gem 'high_voltage'
@@ -92,7 +92,7 @@ gem 'aasm'
 gem 'cancan'
 
 # pagination
-gem 'kaminari'
+gem 'kaminari', '>= 0.15.1'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -110,10 +110,10 @@ gem 'thin'
 # To use debugger
 # gem 'debugger'
 
-gem "ransack"
+gem "ransack", ">= 1.1.0"
 gem 'surveyor', path: 'vendor/gems/surveyor-1.4.0'
 gem 'redcarpet'
-gem "devise", "3.0.3"
+gem "devise", "4.7.0"
 gem 'dotenv-rails'
 gem 'httparty'
 gem 'data_kitten', github: 'theodi/data_kitten' #, path: '../data_kitten'
@@ -134,5 +134,5 @@ gem 'validate_url'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'sidekiq-failures'
-gem 'rails-i18n', '~> 3.0.0'
+gem 'rails-i18n', '~> 4.0.2'
 gem 'eventmachine', '1.0.4'
