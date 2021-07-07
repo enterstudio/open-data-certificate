@@ -33,12 +33,12 @@ group :test do
   gem 'test-unit'
   gem 'csvlint', github: 'theodi/csvlint.rb'
   gem 'vcr'
-  gem 'webmock'
+  gem 'webmock', '>= 1.17.4'
   gem 'shoulda-context'
   gem 'timecop'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
-  gem 'launchy'
+  gem 'launchy', '>= 2.4.3'
 
   # From surveyor
   gem 'json_spec', '~> 1.0.3'
@@ -54,7 +54,7 @@ group :development do
   gem 'parallel_tests'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'letter_opener'
+  gem 'letter_opener', '>= 1.4.1'
 end
 
 group :test, :development do
@@ -118,19 +118,19 @@ gem 'dotenv-rails'
 gem 'httparty'
 gem 'data_kitten', github: 'theodi/data_kitten' #, path: '../data_kitten'
 gem 'delayed_job_active_record'
-gem 'linkeddata'
-gem 'rack-linkeddata'
+gem 'linkeddata', '>= 1.1.11'
+gem 'rack-linkeddata', '>= 1.1.0'
 gem 'jbuilder'
 gem 'rack-cors', require: 'rack/cors'
 gem 'alternate_rails', :github => 'theodi/alternate-rails'
 gem 'fog'
 gem 'juvia_rails', github: 'theodi/juvia_rails'
-gem 'domainatrix'
+gem 'domainatrix', '>= 0.0.11'
 # newrelic appears to be adding significant performance problems
 #gem 'newrelic_rpm'
 gem 'google_drive'
 gem 'memoist'
-gem 'validate_url'
+gem 'validate_url', '>= 0.2.2'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'sidekiq-failures'
