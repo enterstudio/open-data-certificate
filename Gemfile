@@ -1,4 +1,4 @@
-gem 'rails', '~> 3.2.21'
+gem 'rails', '~> 4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,8 +10,8 @@ gem 'rails', '~> 3.2.21'
 # in production environments by default.
 group :assets do
   gem 'sass'
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
 
   gem 'haml', '>= 3.1.3'
 
@@ -25,7 +25,7 @@ group :assets do
 end
 
 group :test do
-  gem "factory_girl_rails", "~> 4.0"
+  gem "factory_girl_rails", "~> 4.4", ">= 4.4.1"
   gem 'sqlite3'
   gem 'coveralls'
   gem 'shoulda'
@@ -74,7 +74,7 @@ end
 
 group :surveyor do
   gem 'fastercsv', '~> 1.5.4'
-  gem 'formtastic', '~> 2.1.0'
+  gem 'formtastic', '~> 2.2.0'
   gem 'uuidtools', '~> 2.1'
   gem 'mustache', '0.99.4'
   gem 'rabl', '~>0.6.13'
@@ -134,5 +134,5 @@ gem 'validate_url'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'sidekiq-failures'
-gem 'rails-i18n', '~> 3.0.0'
+gem 'rails-i18n', '~> 4.0.0'
 gem 'eventmachine', '1.0.4'
