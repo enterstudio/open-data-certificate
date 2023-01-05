@@ -115,7 +115,7 @@ gem 'surveyor', path: 'vendor/gems/surveyor-1.4.0'
 gem 'redcarpet'
 gem "devise", "3.0.3"
 gem 'dotenv-rails'
-gem 'httparty'
+gem 'httparty', '>= 0.21.0'
 gem 'data_kitten', github: 'theodi/data_kitten' #, path: '../data_kitten'
 gem 'delayed_job_active_record'
 gem 'linkeddata'
