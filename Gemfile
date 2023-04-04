@@ -1,4 +1,4 @@
-gem 'rails', '~> 3.2.21'
+gem 'rails', '~> 6.1.7', '>= 6.1.7.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,10 +10,10 @@ gem 'rails', '~> 3.2.21'
 # in production environments by default.
 group :assets do
   gem 'sass'
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 5.0.8'
+  gem 'coffee-rails', '~> 4.2.2'
 
-  gem 'haml', '>= 3.1.3'
+  gem 'haml', '>= 5.0.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
@@ -21,11 +21,11 @@ group :assets do
   gem 'less-rails-bootstrap', '~> 2.3.3'
   gem 'twitter-bootstrap-rails-confirm'
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier', '>= 2.7.2'
 end
 
 group :test do
-  gem "factory_girl_rails", "~> 4.0"
+  gem "factory_girl_rails", "~> 4.4", ">= 4.4.1"
   gem 'sqlite3'
   gem 'coveralls'
   gem 'shoulda'
@@ -36,7 +36,7 @@ group :test do
   gem 'webmock'
   gem 'shoulda-context'
   gem 'timecop'
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', '>= 2.1.0', require: false
   gem 'database_cleaner'
   gem 'launchy'
 
@@ -52,7 +52,7 @@ group :development do
   gem 'ruby-prof'
   gem 'rails-footnotes', '>= 3.7.9'
   gem 'parallel_tests'
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.8.0'
   gem 'binding_of_caller'
   gem 'letter_opener'
 end
@@ -74,13 +74,13 @@ end
 
 group :surveyor do
   gem 'fastercsv', '~> 1.5.4'
-  gem 'formtastic', '~> 2.1.0'
+  gem 'formtastic', '~> 2.2.0'
   gem 'uuidtools', '~> 2.1'
   gem 'mustache', '0.99.4'
-  gem 'rabl', '~>0.6.13'
+  gem 'rabl', '~> 0.6.14'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 4.4.0'
 
 #To serve static content / styleguide
 gem 'high_voltage'
@@ -92,7 +92,7 @@ gem 'aasm'
 gem 'cancan'
 
 # pagination
-gem 'kaminari'
+gem 'kaminari', '>= 1.2.1'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -112,18 +112,18 @@ gem 'thin'
 
 gem "ransack"
 gem 'surveyor', path: 'vendor/gems/surveyor-1.4.0'
-gem 'redcarpet'
-gem "devise", "3.0.3"
+gem 'redcarpet', '>= 3.5.1'
+gem "devise", "4.7.1"
 gem 'dotenv-rails'
-gem 'httparty'
+gem 'httparty', '>= 0.21.0'
 gem 'data_kitten', github: 'theodi/data_kitten' #, path: '../data_kitten'
-gem 'delayed_job_active_record'
+gem 'delayed_job_active_record', '>= 4.1.5'
 gem 'linkeddata'
 gem 'rack-linkeddata'
 gem 'jbuilder'
-gem 'rack-cors', require: 'rack/cors'
+gem 'rack-cors', '>= 1.0.5', require: 'rack/cors'
 gem 'alternate_rails', :github => 'theodi/alternate-rails'
-gem 'fog'
+gem 'fog', '>= 1.21.0'
 gem 'juvia_rails', github: 'theodi/juvia_rails'
 gem 'domainatrix'
 # newrelic appears to be adding significant performance problems
@@ -131,8 +131,8 @@ gem 'domainatrix'
 gem 'google_drive'
 gem 'memoist'
 gem 'validate_url'
-gem 'sidekiq'
-gem 'sinatra', :require => nil
+gem 'sidekiq', '>= 6.2.1'
+gem 'sinatra', '>= 2.2.3', :require => nil
 gem 'sidekiq-failures'
-gem 'rails-i18n', '~> 3.0.0'
+gem 'rails-i18n', '~> 4.0.2'
 gem 'eventmachine', '1.0.4'
