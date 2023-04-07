@@ -131,7 +131,7 @@ gem 'domainatrix'
 gem 'google_drive'
 gem 'memoist'
 gem 'validate_url'
-gem 'sidekiq'
+gem 'sidekiq', '>= 7.0.8'
 gem 'sinatra', :require => nil
 gem 'sidekiq-failures'
 gem 'rails-i18n', '~> 3.0.0'
