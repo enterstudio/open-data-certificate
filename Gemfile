@@ -1,4 +1,4 @@
-gem 'rails', '~> 3.2.21'
+gem 'rails', '~> 6.1.7', '>= 6.1.7.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,7 +10,7 @@ gem 'rails', '~> 3.2.21'
 # in production environments by default.
 group :assets do
   gem 'sass'
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails', '~> 6.0.0'
   gem 'coffee-rails', '~> 3.2.1'
 
   gem 'haml', '>= 3.1.3'
@@ -36,7 +36,7 @@ group :test do
   gem 'webmock'
   gem 'shoulda-context'
   gem 'timecop'
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', '>= 1.4.3', require: false
   gem 'database_cleaner'
   gem 'launchy'
 
@@ -92,7 +92,7 @@ gem 'aasm'
 gem 'cancan'
 
 # pagination
-gem 'kaminari'
+gem 'kaminari', '>= 1.0.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -110,7 +110,7 @@ gem 'thin'
 # To use debugger
 # gem 'debugger'
 
-gem "ransack"
+gem "ransack", ">= 2.3.1"
 gem 'surveyor', path: 'vendor/gems/surveyor-1.4.0'
 gem 'redcarpet'
 gem "devise", "3.0.3"
@@ -134,5 +134,5 @@ gem 'validate_url'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'sidekiq-failures'
-gem 'rails-i18n', '~> 3.0.0'
+gem 'rails-i18n', '~> 4.0.3'
 gem 'eventmachine', '1.0.4'
