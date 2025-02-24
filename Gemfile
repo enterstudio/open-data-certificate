@@ -36,7 +36,7 @@ group :test do
   gem 'webmock'
   gem 'shoulda-context'
   gem 'timecop'
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', '>= 3.0.0', require: false
   gem 'database_cleaner'
   gem 'launchy'
 
@@ -118,12 +118,12 @@ gem 'dotenv-rails'
 gem 'httparty'
 gem 'data_kitten', github: 'theodi/data_kitten' #, path: '../data_kitten'
 gem 'delayed_job_active_record'
-gem 'linkeddata'
-gem 'rack-linkeddata'
+gem 'linkeddata', '>= 3.2.0'
+gem 'rack-linkeddata', '>= 3.2.1'
 gem 'jbuilder'
 gem 'rack-cors', require: 'rack/cors'
 gem 'alternate_rails', :github => 'theodi/alternate-rails'
-gem 'fog'
+gem 'fog', '>= 1.37.0'
 gem 'juvia_rails', github: 'theodi/juvia_rails'
 gem 'domainatrix'
 # newrelic appears to be adding significant performance problems
