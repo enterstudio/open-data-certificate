@@ -60,7 +60,7 @@ end
 group :test, :development do
   gem 'pry-byebug'
   gem 'pry-remote'
-  gem 'rspec-rails', '~> 2.14.2'
+  gem 'rspec-rails', '~> 8.0.0'
 end
 
 group :production do
