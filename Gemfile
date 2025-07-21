@@ -1,4 +1,4 @@
-gem 'rails', '~> 3.2.21'
+gem 'rails', '~> 3.2.22'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,8 +10,8 @@ gem 'rails', '~> 3.2.21'
 # in production environments by default.
 group :assets do
   gem 'sass'
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 4.0.0'
+  gem 'coffee-rails', '~> 4.0.0'
 
   gem 'haml', '>= 3.1.3'
 
@@ -25,9 +25,9 @@ group :assets do
 end
 
 group :test do
-  gem "factory_girl_rails", "~> 4.0"
+  gem "factory_girl_rails", "~> 4.5", ">= 4.5.0"
   gem 'sqlite3'
-  gem 'coveralls'
+  gem 'coveralls', '>= 0.7.1'
   gem 'shoulda'
   gem 'mocha', require: false
   gem 'test-unit'
@@ -36,7 +36,7 @@ group :test do
   gem 'webmock'
   gem 'shoulda-context'
   gem 'timecop'
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', '>= 1.4.2', require: false
   gem 'database_cleaner'
   gem 'launchy'
 
@@ -45,12 +45,12 @@ group :test do
 end
 
 group :development do
-  gem 'guard', '~> 1.8.3'
-  gem 'guard-test'
+  gem 'guard', '~> 2.0.0'
+  gem 'guard-test', '>= 2.0.0'
   # gem 'spring', github: 'jonleighton/spring'
   gem 'terminal-notifier-guard'
   gem 'ruby-prof'
-  gem 'rails-footnotes', '>= 3.7.9'
+  gem 'rails-footnotes', '>= 4.0.0'
   gem 'parallel_tests'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -60,16 +60,16 @@ end
 group :test, :development do
   gem 'pry-byebug'
   gem 'pry-remote'
-  gem 'rspec-rails', '~> 2.14.2'
+  gem 'rspec-rails', '~> 2.99.0'
 end
 
 group :production do
-  gem 'foreman'
+  gem 'foreman', '>= 0.64.0'
   gem 'mysql2'
   gem 'airbrake'
   gem 'delayed-plugins-airbrake'
   gem 'logstash-event'
-  gem 'lograge'
+  gem 'lograge', '>= 0.3.0'
 end
 
 group :surveyor do
@@ -80,7 +80,7 @@ group :surveyor do
   gem 'rabl', '~>0.6.13'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 3.1.1'
 
 #To serve static content / styleguide
 gem 'high_voltage'
@@ -113,7 +113,7 @@ gem 'thin'
 gem "ransack"
 gem 'surveyor', path: 'vendor/gems/surveyor-1.4.0'
 gem 'redcarpet'
-gem "devise", "3.0.3"
+gem "devise", "3.0.4"
 gem 'dotenv-rails'
 gem 'httparty'
 gem 'data_kitten', github: 'theodi/data_kitten' #, path: '../data_kitten'
@@ -134,5 +134,5 @@ gem 'validate_url'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'sidekiq-failures'
-gem 'rails-i18n', '~> 3.0.0'
+gem 'rails-i18n', '~> 4.0.0'
 gem 'eventmachine', '1.0.4'
