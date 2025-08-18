@@ -1,4 +1,4 @@
-gem 'rails', '~> 3.2.21'
+gem 'rails', '~> 7.1.5', '>= 7.1.5.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -36,7 +36,7 @@ group :test do
   gem 'webmock'
   gem 'shoulda-context'
   gem 'timecop'
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', '>= 1.4.3', require: false
   gem 'database_cleaner'
   gem 'launchy'
 
@@ -50,7 +50,7 @@ group :development do
   # gem 'spring', github: 'jonleighton/spring'
   gem 'terminal-notifier-guard'
   gem 'ruby-prof'
-  gem 'rails-footnotes', '>= 3.7.9'
+  gem 'rails-footnotes', '>= 4.0.0'
   gem 'parallel_tests'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -110,14 +110,14 @@ gem 'thin'
 # To use debugger
 # gem 'debugger'
 
-gem "ransack"
+gem "ransack", ">= 1.2.0"
 gem 'surveyor', path: 'vendor/gems/surveyor-1.4.0'
 gem 'redcarpet'
 gem "devise", "3.0.3"
 gem 'dotenv-rails'
 gem 'httparty'
 gem 'data_kitten', github: 'theodi/data_kitten' #, path: '../data_kitten'
-gem 'delayed_job_active_record'
+gem 'delayed_job_active_record', '>= 4.1.7'
 gem 'linkeddata'
 gem 'rack-linkeddata'
 gem 'jbuilder'
@@ -134,5 +134,5 @@ gem 'validate_url'
 gem 'sidekiq'
 gem 'sinatra', :require => nil
 gem 'sidekiq-failures'
-gem 'rails-i18n', '~> 3.0.0'
+gem 'rails-i18n', '~> 4.0.2'
 gem 'eventmachine', '1.0.4'
